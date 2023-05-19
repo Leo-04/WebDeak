@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <style>
+            * {
+                {{GLOBAL CSS}}
+            }
+            table {
+                position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+                height:100%;
+                width:100%;
+            }
+            td {
+                width: {{WIDTH}}%;
+                height: {{HEIGHT}}%;
+            }
+            .text {
+                /*transform: rotate({{ROTATION}}deg);
+                -webkit-transform: rotate({{ROTATION}}deg);
+                -moz-transform: rotate({{ROTATION}}deg);
+                -ms-transform: rotate({{ROTATION}}deg);
+                -o-transform: rotate({{ROTATION}}deg);*/
+                width: 100%;
+                height: 100%;
+            }
+            .image {
+                /*max-width: 100%;
+                max-height: 100%;
+                min-width: 1px;
+                min-height: 1px;
+                object-fit: contain;*/
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            {{ITEMS}}
+        </table>
+    </body>
+    
+    <script>
+        function send(data){
+            var request = new XMLHttpRequest();
+            request.open('POST', "", true);
+            request.send(""+data);
+        }
+
+        /*function read_messages(){
+            if (this.readyState == 4 && this.status == 200) {
+                var data = JSON.parse(this.responseText);
+                //alert("Message: "+this.responseText);
+            }
+        }
+
+        function post_messages(){
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = read_messages;
+            request.open('POST', "/", true);
+            request.send("");
+        }
+
+        function loop_post_messages(){
+            post_messages();
+            setTimeout("loop_post_messages()", 1000);
+        }
+
+        loop_post_messages();*/
+    </script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <style>
+            * {
+                {{GLOBAL CSS}}
+            }
+            .text {
+                color: red;
+                width: 100%;
+                height: 100%;
+            }
+            #ip{
+                color: green;
+            }
+            .button{
+                width: 100%;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="text">Access Denied</p>
+        <p class="text">Your IP: <span id="ip">{{IP}}</span></p>
+    </body>
+    <script>
+        document.getElementById("location").innerHTML = decodeURI(window.location.pathname).substring(1)
+    </script>
+</html>

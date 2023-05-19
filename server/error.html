@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <style>
+            * {
+                {{GLOBAL CSS}}
+            }
+            .text {
+                color: red;
+                width: 100%;
+                height: 100%;
+            }
+            #location{
+                color: green;
+            }
+            .button{
+                width: 100%;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <button class='button' onclick='window.location = ""'> Home </button>
+        <p class="text">Cannot find <span id="location">the current location</span> in button tables</p>
+    </body>
+    <script>
+        document.getElementById("location").innerHTML = decodeURI(window.location.pathname).substring(1)
+    </script>
+</html>
